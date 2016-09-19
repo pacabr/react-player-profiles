@@ -1,0 +1,17 @@
+{
+  "name": "my-react-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "create-react-app": "^0.3.0"
+  },
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  }
+}

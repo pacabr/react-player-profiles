@@ -1,0 +1,195 @@
+* {
+	-webkit-border-radius: 0 !important;
+		-moz-border-radius: 0 !important;
+			border-radius: 0 !important;
+	-webkit-border: 0 !important;
+		-moz-border: 0 !important;
+			border: 0 !important;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.panel {
+	margin: 0 !important;
+	border: none !important;
+	border-radius: 0;
+}
+
+.panel-R-container {
+	margin: 0;
+	padding: 0;
+	height: auto;
+}
+
+.panel-L-container {
+	margin: 0;
+	padding: 0;
+}
+
+.panel-heading {
+	margin: 0 !important;
+	border: none !important;
+}
+
+.panel-heading-R {
+	padding-left: 10px;
+
+}
+
+.panel-heading li {
+	border-radius: 0;
+	border: none;
+}
+
+.nav-tabs .nav-justified .active a {
+	border: none !important;
+}
+
+.panel-body-l {
+	padding-left: 0;
+	padding-top: 0;
+}
+
+.panel-L-vertical-nav {
+	padding-right: 0;
+}
+
+.nav-stacked .active a {
+	background-color: #609dd2 !important;
+}
+
+.panel-L-content-pane {
+	padding-top: 5px;
+}
+
+.panel-L-content-pane ul {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 15px;
+}
+
+.panel-L-content-pane li {
+	list-style: none;
+}
+
+.panel-R-content-pane {
+	padding: 0;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+section.content {
+  flex: 1;
+}
+
+.panel-R-content-pane .jumbotron {
+	background-image: url("http://mlb.mlb.com/images/players/action_shots/543685.jpg");
+	background-position: top center;
+	box-shadow: -10px -15px 75px 20px #000 inset;
+	background-size: cover;
+	height: 400px;
+	background-repeat: no-repeat;
+	margin: 0;
+
+}
+
+.jumbotron h1 {
+	font-size: 2.5em;
+	position: relative;
+	top: -55px;
+	left: 245px;
+	color: #f2f2f2;
+	text-shadow: 1px 1px 11px #000;
+}
+
+.jumbotron h2 {
+	font-size: 1.5em;
+	position: relative;
+	top: -55px;
+	left: 243px;
+	color: #1a1a1a;
+}
+
+.img-headshot {
+	max-width: 233px;
+	max-height: 340px; 
+	background-color: #ebebeb;
+	border: 1px solid #cfcfcf;
+	padding: 10px;
+	position: relative;
+	top: 171px;
+	left: -15px;
+
+}
+
+.nav-tabs {
+	margin: -10px;
+	padding: -10px;
+	border-radius: 0;
+	list-style: none;
+	border: none !important;
+}
+
+.table {
+	position: relative;
+	top: 45px;
+	left: 300px;
+	max-width: 60%;
+}
+
+.table-bordered {
+	border-width: 2px !important;
+	border-style: solid !important;
+	border-color: #bdc0c2 !important;
+}
+
+.tg  {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.tg td {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	padding: 10px 5px; 
+	border-style: solid !important;
+	border-width: 1px !important;
+	overflow: hidden;
+	word-break: normal;
+}
+.tg th {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	padding: 10px 5px;
+	border-style: solid !important;
+	border-width: 1px !important;
+	overflow: hidden;
+	word-break: normal;
+}
+.tg .tg-lqy6 {
+	text-align: right;
+	vertical-align: top;
+}
+.tg .tg-l2oz {
+	font-weight: bold;
+	text-align: right;
+	vertical-align: top;
+}
+
+.thead-inverse th {
+	color: #fff;
+	background-color: #373a3c;
+	border: 1px solid #373a3c !important;
+	border-width: 1px !important;
+}
+
+.clear { clear: both; }
+
+/* TO DO 
+- .active for side nav
