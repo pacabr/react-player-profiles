@@ -191,5 +191,40 @@ section.content {
 
 .clear { clear: both; }
 
+
+
+.btn-search {
+	color: #333;
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
+}
+
+.glyphicon-inverse {
+	color: #333;
+	background-color: #fff;
+	top: 0;
+}
+
+.ui-menu-item {
+	background-color: #fff;
+	list-style: none;
+}
+
+.input-group .ui-menu .ui-menu-item {
+	width: inherit;
+}
+
+.ui-menu {
+	background-color: #fff;
+	list-style: none;
+	max-height: 226px;
+	overflow-y: auto;
+	display: block !important;
+	padding: 0 12px !important;
+	z-index: 99;
+	white-space: nowrap;
+}
+
 /* TO DO 
 - .active for side nav

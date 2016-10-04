@@ -4,6 +4,8 @@
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../styles.css">
+	<script src="../js/data/nameIdPairs.json"></script>
+	<script src="../js/data/names.json"></script>
 
 	<title>New</title>
 </head>
@@ -41,10 +43,10 @@
         </li>
       </ul>
 
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+      <ul class="nav navbar-nav navbar-right">        
+    
+        <li class=" navbar-right dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Action</a></li>
             <li><a href="#">Another action</a></li>
@@ -53,7 +55,20 @@
             <li><a href="#">Separated link</a></li>
           </ul>
         </li>
+
+        <li class="navbar-right"><a href="#">About</a></li>
+
+        <form class="navbar-form navbar-right ui-widget">
+	        <div class="input-group">
+	        	<input id="searchNames" type="text" class="form-control" placeholder="Player Search">
+	        	<span class="input-group-btn">
+	        		<button id="searchName" class="btn btn-search"><span class="form-control glyphicon-inverse glyphicon glyphicon-search"></span></button>
+	        	</span>
+	        </div>
+	        
+	    </form>
       </ul>
+
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
@@ -88,6 +103,7 @@
 		<div class="col-md-9 panel-R-container">
 			<div class="panel panel-warning">
 				<div class="panel-heading panel-heading-R">
+					
 					<ul class="nav nav-tabs nav-justified">
 					  <li role="presentation" class="active first-tab-R"><a href="#">Profile</a></li>
 					  <li role="presentation"><a href="#">Stats</a></li>
@@ -97,54 +113,29 @@
 
 				</div>
 				<div class="flex-container panel-R-content-pane">
+					
 					<div class="jumbotron">
-						<img class="img-headshot" src="http://mlb.mlb.com/mlb/images/players/head_shot/543685.jpg">
-						<h1>Anthony Rendon</h1>
-						<h2>Washington Nationals | 3B | #6</h2>
+						<img id="playerHeadshot" class="img-headshot" src="">
+						<h1 id="playerNameHeading"></h1>
+						<h2 id="teamNameHeading"></h2>
 					</div>
 
 					<div class="content">
-							<table class="table table-bordered tg">
-								<thead class='thead-inverse'>
-									<tr>
-									    <th class="tg-l2oz">Year</th>
-									    <th class="tg-l2oz">AB</th>
-									    <th class="tg-l2oz">R</th>
-									    <th class="tg-l2oz">H</th>
-									    <th class="tg-l2oz">HR</th>
-									    <th class="tg-l2oz">RBI</th>
-									    <th class="tg-l2oz">SB</th>
-									    <th class="tg-l2oz">AVG</th>
-									    <th class="tg-l2oz">OBP</th>
-									    <th class="tg-l2oz">OPS</th>
-									</tr>
-								</thead>
-								
-									<tr>
-									    <td class="tg-lqy6">2016</td>
-									    <td class="tg-lqy6">523</td>
-									    <td class="tg-lqy6">84</td>
-									    <td class="tg-lqy6">144</td>
-									    <td class="tg-lqy6">18</td>
-									    <td class="tg-lqy6">78</td>
-									    <td class="tg-lqy6">12</td>
-									    <td class="tg-lqy6">.275</td>
-									    <td class="tg-lqy6">.255</td>
-									    <td class="tg-lqy6">.811</td>
-									</tr>
-									<tr>
-									    <td class="tg-lqy6">Career</td>
-									    <td class="tg-lqy6">1798</td>
-									    <td class="tg-lqy6">278</td>
-									    <td class="tg-lqy6">495</td>
-									    <td class="tg-lqy6">51</td>
-									    <td class="tg-lqy6">221</td>
-									    <td class="tg-lqy6">31</td>
-									    <td class="tg-lqy6">.275</td>
-									    <td class="tg-lqy6">.346</td>
-										<td class="tg-lqy6">.781</td>
-									</tr>
-							</table>
+						
+						<table class="table table-bordered tg">
+							<thead class='thead-inverse'>
+								<tr id="statsTableTopHeader">
+
+								</tr>
+							</thead>
+							
+							<tr id="statsTableTopCurrent">
+							</tr>
+							<tr id="statsTableTopCareer">
+							</tr>
+
+						</table>
+
 					</div>
 				</div>
 			</div>
@@ -154,10 +145,30 @@
 </div>
 
 
+
+
+<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-database.js"></script>
+<script>
+  var config = {
+	apiKey: "apiKey",
+    authDomain: "mrp-working.firebaseapp.com",
+    databaseURL: "https://mrp-working.firebaseio.com",
+    storageBucket: "bucket.appspot.com"  };
+  firebase.initializeApp(config);
+
+  var database = firebase.database();
+</script>
+
 <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
-<script src="../scripts.js"></script>
+
+<script src="../scripts.js"></script> 
+<script src="../js/data/exportKeyPlayersToJson.js"></script>
+<!--  <script src="../js/playerIDsToJson.js"></script> -->
+
 
 </body>
 </html>
